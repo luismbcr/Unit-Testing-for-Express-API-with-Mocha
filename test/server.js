@@ -6,18 +6,18 @@ describe('Temperature conversor API', function(){
 	describe('Celsius to Fahrenheit conversion', function(){
 		it('return status 200', function(done){
 			axios
-				.get('http://localhost:8080/toFahrenheit?temperature=100')
+				.get('http://localhost:3000/toFahrenheit?temperature=100')
 				.then(function(res){
 					expect(res.status).to.equal(200);
 					done();
 				})
 		})
 
-		it('return  100c in Fahrenheit', function(done){
+		it('return  212c in Fahrenheit', function(done){
 			axios
-				.get('http://localhost:8080/toFahrenheit?temperature=100')
+				.get('http://localhost:3000/toFahrenheit?temperature=100')
 				.then(function(res){
-					expect(res.data).to.equal(212);
+					expect(res.data.temp).to.equal(212);
 					done();
 				})
 		})
@@ -27,7 +27,7 @@ describe('Temperature conversor API', function(){
 	describe('Fahrenheit to Celsius conversion', function(){
 		it('return status 200', function(done){
 			axios
-				.get('http://localhost:8080/toCelsius?temperature=212')
+				.get('http://localhost:3000/toCelsius?temperature=212')
 				.then(function(res){
 					expect(res.status).to.equal(200);
 					done();
@@ -36,9 +36,9 @@ describe('Temperature conversor API', function(){
 
 		it('return  100c in Celsius', function(done){
 			axios
-				.get('http://localhost:8080/toCelsius?temperature=212')
+				.get('http://localhost:3000/toCelsius?temperature=212')
 				.then(function(res){
-					expect(res.data).to.equal(100);
+					expect(res.data.temp).to.equal(100);
 					done();
 				})
 		})

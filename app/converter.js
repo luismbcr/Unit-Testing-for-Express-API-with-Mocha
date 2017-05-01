@@ -1,8 +1,8 @@
 module.exports = {
-	toFahrenheit: function(temperature){
+	toFahrenheit: (temperature)=>{
 		return (temperature * 9/5) +32;
 	},
-	toCelsius: function(temperature){
+	toCelsius: (temperature)=>{
 		return (temperature - 32) * 5/9;
 	}
 }
