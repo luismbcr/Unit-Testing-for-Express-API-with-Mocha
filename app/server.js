@@ -1,16 +1,23 @@
 
-var express = require('express');
-var converter = require('../app/converter');
+import express from 'express';
+import  converter  from '../app/converter';
 
-var app = express();
+const app = express();
+let temperature = 0;
 
-app.get('/toCelsius', function(req,res){
-	var temperature = req.query.temperature;
-	res.send(200, converter.toCelsius(temperature));
-})
+app.get('/', ()=>{
+	console.log('main');
+});
+app.get('/toCelsius', (req,res)=>{
+	temperature = req.query.temperature;
+	res.status(200).json({"temp": converter.toCelsius(temperature)});
+});
 
-app.get('/toFahrenheit', function(req, res){
-	var temperature = req.query.temperature;
-	res.send(200, converter.toFahrenheit(temperature));
-})
-app.listen(8080);
+app.get('/toFahrenheit', (req, res)=>{
+	temperature = req.query.temperature;
+	res.status(200).json({"temp": converter.toCelsius(temperature)});
+});
+
+app.listen(3000, ()=> {
+  console.log('APP listening on port 3000!');
+});
