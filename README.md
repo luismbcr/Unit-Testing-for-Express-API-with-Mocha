@@ -1,17 +1,11 @@
-# Unit Testing with Mocha
-Example of Unit testing using Mocha and Chai expect.
+# Unit Testing for Express API with Mocha
 
-Install dependencies:
-```
-npm install
-```
+Unit Testing example for an API built with express JS that uses Mocha and Chai expect.
 
-Run server
-```
-node app/server.js
-```
+Install dependencies and start server:
 
-Execute the testing:
-```
-npm test
-```
+    npm start
+
+**Testing** 
+
+    npm test
