@@ -1,5 +1,5 @@
 /*MODULE Dependecies */
-var expect = require('chai').expect; //comparar valores dentro de los test
+var expect = require('chai').expect; //Compare values within conveter.
 var converter = require('../app/converter');
 
 describe('Temperature Conversor', function(){
